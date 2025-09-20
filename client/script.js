@@ -9,11 +9,16 @@ function getBaseURL(url) {
 }
 
 function LoadUpURL(url = "../demo/main.xml?node=hello") {
-    if (document.getElementById("url_input").value == url && notEntered) return;
-
+    if (document.getElementById("url_input").value == url && notEntered)
+        return
+    console.log(" XML:", url);
     document.getElementById("url_input").value = url;
     const urlObj = new URL(url, window.location.href);
     const nodeParam = new URLSearchParams(urlObj.search).get("node");
+
+    if (!nodeParam) {
+
+    };
 
     if (currentNodePath.join('/') === nodeParam) {
         loadFromCache();
@@ -29,18 +34,18 @@ function LoadUpURL(url = "../demo/main.xml?node=hello") {
 
 function fetchXML(url) {
     fetch(url)
-        .then(res => res.text())
-        .then(xmlText => {
+        .then(response => response.text())
+        .then(xml => {
             const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, "application/xml");
-            if (xmlDoc.querySelector("parsererror")) {
-                console.error("XML parse error");
-                return;
-            }
+            const xmlDoc = parser.parseFromString(xml, "application/xml");
+
             currentXML = xmlDoc;
+
             processNode(xmlDoc);
         })
-        .catch(err => console.error("Error fetching XML:", err));
+        .catch(error => {
+            console.error("Error loading XML:", error);
+        });
 }
 
 function processNode(xmlDoc) {
@@ -50,9 +55,10 @@ function processNode(xmlDoc) {
     } else {
         currentNode = xmlDoc;
         for (let path of currentNodePath) {
-            currentNode = currentNode.querySelector(`node[title="${path}"], node[id="${path}"]`);
-            if (!currentNode) return;
-        }
+    currentNode = currentNode.querySelector(`node[title="${path}"], node[id="${path}"]`);
+    if (!currentNode) return;
+}
+
     }
     if (currentNode) renderNode(currentNode);
 }
@@ -172,3 +178,17 @@ function loadBackBtn() {
         btn.style.opacity = .7;
     }
 }
+
+let hoverTimer;
+
+const pathLogs = document.querySelector('#path_logs');
+
+pathLogs.addEventListener('mouseleave', () => {
+  hoverTimer = setTimeout(() => {
+    pathLogs.scrollTo({ top: pathLogs.scrollHeight, behavior: 'smooth' });
+  }, 300);
+});
+
+pathLogs.addEventListener('mouseenter', () => {
+  clearTimeout(hoverTimer);
+});

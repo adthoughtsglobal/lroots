@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Documentation: LinkedRoots</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        body {
+            background-color: white;
+            color: #1f1f1f;
+            padding: 1em;
+            font-size: 1em;
+            font-family: "IBM Plex Sans", sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            padding-bottom: .3em;
+            border-bottom: 2px solid rgba(124, 124, 124, 0.211);
+            font-weight: normal;
+        }
+
+        kbd {
+            padding: 3px;
+            background-color: rgb(255, 224, 178);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <h1>LinkedRoots</h1>
+    <p>A system for structured information</p>
+    <p>LinkedRoots is a lightweight, <b>structured content platform</b> designed for focused navigation and deep learning. Instead of traditional web pages, it organizes information as hierarchical nodes, each with a <b>title</b>, and <b>data</b> (text, image, video, file). Nodes can link internally within the same document or externally across different LRML files, creating a decentralized network of interconnected content. Users navigate one node at a time while the client dynamically tracks the path they’ve taken, allowing easy backtracking and clear contextual breadcrumbs. </p>
+    <p>By reducing distractions and emphasizing precise content access, LinkedRoots is ideal for education, research, and curated knowledge-sharing. Making learning easier by taking it slow and at your own pace.</p>
+    <h2>LRML</h2>
+    <p>Anyone can make a linkedRoot page, to create them, follow the spec on an xml file. Linked Root Markup Language (LRML) is a very easy way to organize information.</p>
+    <p>LRML consists of <kbd>node</kbd> tags, which can be nested, would contain <kbd>data</kbd>tags. the <kbd>type</kbd> attribute in data tag defines the type of the data, there are some standard values including "image", "video" or "file".</p>
+    <h2>Linking</h2>
+    <p>Sub nodes can be defined within the LRML or be linked to an externally defined LMRL file. You can link and external LMRL by having the URL of the xml file in the <kbd>src</kbd> attribute of the <kbd>node</kbd> tag. Paths can be either relative or be full URLs.</p>
+    <h2>LinkedRoot Browser</h2>
+    <p>LinkedRoot Browser is a web-based browser that can be used to browse the LMRL/linkedRoot web. It comes with single-node driven browsing with easy access to previous paths and URL. </p><p>You can try it <a href="client/">here</a></p>
+    <h2>Sample LMRL pages</h2>
+    <p>Please paste these links in the address bar of the LinkedRoot Browser to open these.</p>
+    <ul>
+        <li><a href="demo/cars.xml">Documentation on cars</a>: A 10KB documentation on various things related to cars.</li>
+    </ul>
+</body>
+
+</html>

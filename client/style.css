@@ -93,12 +93,9 @@ body,
             max-height: 70px;
             border-radius: .7em;
             background-color: var(--basic_bg2);
-            overflow: hidden;
             overflow-y: auto;
             transition: .3s cubic-bezier(0.42, 1.67, 0.21, 0.90);
             flex-direction: column;
-            display: flex;
-            justify-content: flex-end;
             position: relative;
             transition-delay: 0s;
 

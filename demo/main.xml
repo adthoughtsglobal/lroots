@@ -1,0 +1,23 @@
+<lrml>
+  <node title="hello">
+    <data type="text">node data here. it is text by default. Anyone can link to this node by adding a query param '?node=hello' </data>
+
+    <node title="subnode: internal" id="thisisanid">
+      <data>sub node with internal definition. link to this node by adding a query param '?node=hello/subnode: internal' or by the ID, by adding a query param '?node=#thisisanid'</data>
+    </node>
+
+    <node title="About cars" src="cars.xml?node=Cars Wiki" />
+
+    <node title="type of data #1">
+      <data type="image">image url</data>
+    </node>
+
+    <node title="type of data #2">
+      <data type="video">video url</data>
+    </node>
+
+    <node title="type of data #3">
+      <data type="file">file url to be downloaded</data>
+    </node>
+  </node>
+</lrml>

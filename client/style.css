@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@font-face {
+    font-family: 'Material Symbols Rounded';
+    font-style: normal;
+    src: url("https://adthoughtsglobal.github.io/assets/MaterialSymbolsRounded.woff2") format('woff2');
+}
+
+.msr {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    display: inline-block;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    background-color: var(--light_bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    transition: .5s;
+    font-family: "IBM Plex Sans", sans-serif;
+    background-attachment: fixed;
+}
+
+:root {
+    --text: #ffffffe7;
+    --light_bg: rgb(15, 15, 15);
+    --high: #414a48;
+    --basic_bg: #263636;
+    --basic_bg2: rgb(30, 42, 42);
+    --link: #455152;
+    --link_text: #b4f9ff;
+    --light_text: #b6dddd;
+    --border: 1px solid #ffffff19;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--basic_bg);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--high);
+}
+
+body,
+.main_body {
+    height: 100%;
+    margin: 0;
+}
+
+.main_body {
+    flex-direction: column;
+    padding: 1em;
+    display: flex;
+
+    &>.top_bar {
+        background-color: var(--basic_bg);
+        border-radius: 1em;
+        padding: .5em;
+        flex-direction: column;
+        display: flex;
+        gap: .3em;
+        user-select: none;
+
+        &>#path_logs {
+            min-height: 70px;
+            max-height: 70px;
+            border-radius: .7em;
+            background-color: var(--basic_bg2);
+            overflow: hidden;
+            overflow-y: auto;
+            transition: .3s cubic-bezier(0.42, 1.67, 0.21, 0.90);
+            flex-direction: column;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            transition-delay: 0s;
+
+            &:hover {
+                height: fit-content;
+                position: relative;
+                transition-delay: .5s;
+                max-height: 150px;
+            }
+
+            &>.singular_path {
+                margin: 0;
+                padding: .5em;
+                padding-left: 1.5em;
+                font-size: .9em;
+                display: flex;
+                gap: .5em;
+                flex: 1;
+                max-height: 20px;
+                min-height: 20px;
+                position: relative;
+                justify-content: space-between;
+
+                &:hover {
+                    background-color: #ffffff16;
+                }
+
+                &>.url {
+                    opacity: .5;
+                }
+
+                &>.title {
+                    flex: 1;
+                }
+
+                &::before {
+                    content: '';
+                    width: 2px;
+                    height: 130%;
+                    z-index: 1;
+                    position: absolute;
+                    top: 5px;
+                    left: .7em;
+                    background-color: aqua;
+                }
+
+                &:last-child {
+                    &::before {
+                        content: '';
+                        width: 10px;
+                        height: 10px;
+                        z-index: 1;
+                        position: absolute;
+                        top: 12px;
+                        left: 6px;
+                        border-radius: 5px;
+                        background-color: aqua;
+                    }
+                }
+            }
+        }
+
+        &>.address_bar {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-items: center;
+            gap: .5em;
+
+            &>.url_input_bar {
+                background-color: var(--basic_bg2);
+                border-radius: .7em;
+                flex: 1;
+
+                &>input {
+                    background-color: transparent;
+                    border: none;
+                    padding: .5em;
+                    font: inherit;
+                    color: inherit;
+                    outline: 0;
+                    width: calc(100% - 1em);
+                }
+            }
+
+            &>.nav_button {
+                padding: .4em;
+                font-size: 1.3em;
+                border-radius: .7em;
+                cursor: pointer;
+                opacity: .7;
+
+                &:hover {
+                    background-color: #ffffff16;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &>.main_content_area {
+        &>.primary_content {
+            margin: 1em;
+
+            &>#primary_p {
+                border-bottom: 1px solid rgba(128, 128, 128, 0.264);
+                padding-bottom: 1em;
+            }
+
+            &>#sublinks {
+                display: flex;
+                flex-direction: column;
+
+                &>.sing_sub_link {
+                    padding: .5em 1em;
+                    border-radius: 7em;
+                    opacity: .7;
+                    width: 300px;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    gap: .5em;
+                    justify-content: space-between;
+
+                    &:hover .subl_ic {
+                        opacity: 1;
+                        transform: translateX(5px);
+                    }
+
+                    &>.subl_ic {
+                        opacity: .3;
+                        transition: .5s;
+                    }
+
+                    &:hover {
+                        background-color: #ffffff16;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

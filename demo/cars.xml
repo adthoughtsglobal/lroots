@@ -1,0 +1,171 @@
+<lrml>
+  <node title="Cars Wiki">
+    <data type="text">Welcome to the Cars Wiki. Explore various car categories, models, manufacturers, and more.</data>
+
+    <!-- General Car Information -->
+    <node title="Car Basics">
+      <data type="text">A car is a vehicle used for transporting passengers. It usually has four wheels and an internal combustion engine.</data>
+    </node>
+
+    <!-- Car Types -->
+    <node title="Types of Cars">
+      <node title="Sedan">
+        <data type="text">A sedan is a passenger car with a three-box configuration: engine, passenger, and cargo.</data>
+      </node>
+      <node title="SUV">
+        <data type="text">An SUV (Sport Utility Vehicle) is a larger vehicle that combines elements of road-going passenger cars with off-road vehicles.</data>
+      </node>
+      <node title="Coupe">
+        <data type="text">A coupe is a two-door car, typically sporty or luxurious, with a fixed roof and a more aggressive design.</data>
+      </node>
+      <node title="Convertible">
+        <data type="text">A convertible is a car with a roof structure that can be converted from closed to open, allowing for open-air driving.</data>
+      </node>
+      <node title="Hatchback">
+        <data type="text">A hatchback is a car with a rear door that swings upward, providing access to a trunk area.</data>
+      </node>
+      <node title="Minivan">
+        <data type="text">A minivan is a larger vehicle typically used for family transportation, offering spacious interiors and sliding doors.</data>
+      </node>
+    </node>
+
+    <!-- Car Manufacturers -->
+    <node title="Car Manufacturers">
+      <node title="Toyota">
+        <data type="text">Toyota is a Japanese automobile manufacturer known for producing reliable and fuel-efficient vehicles.</data>
+        <node title="Popular Toyota Models">
+          <node title="Corolla">
+            <data type="text">The Toyota Corolla is a compact car known for its affordability and reliability.</data>
+          </node>
+          <node title="Camry">
+            <data type="text">The Toyota Camry is a midsize sedan known for its smooth ride and longevity.</data>
+          </node>
+          <node title="RAV4">
+            <data type="text">The Toyota RAV4 is a compact crossover SUV offering a mix of practicality and versatility.</data>
+          </node>
+        </node>
+      </node>
+      <node title="Ford">
+        <data type="text">Ford is an American multinational automobile manufacturer known for its trucks, SUVs, and innovative models like the Mustang.</data>
+        <node title="Popular Ford Models">
+          <node title="F-150">
+            <data type="text">The Ford F-150 is a full-size pickup truck known for its toughness and strong towing capability.</data>
+          </node>
+          <node title="Mustang">
+            <data type="text">The Ford Mustang is an iconic American muscle car known for its powerful engines and performance.</data>
+          </node>
+          <node title="Explorer">
+            <data type="text">The Ford Explorer is a midsize SUV known for its family-friendly features and off-road capabilities.</data>
+          </node>
+        </node>
+      </node>
+      <node title="BMW">
+        <data type="text">BMW is a German luxury automobile manufacturer known for its precision engineering and performance-oriented vehicles.</data>
+        <node title="Popular BMW Models">
+          <node title="3 Series">
+            <data type="text">The BMW 3 Series is a compact executive car known for its driving dynamics and luxury features.</data>
+          </node>
+          <node title="X5">
+            <data type="text">The BMW X5 is a luxury SUV combining spaciousness with sportiness.</data>
+          </node>
+          <node title="M3">
+            <data type="text">The BMW M3 is a high-performance variant of the 3 Series, known for its power and agility.</data>
+          </node>
+        </node>
+      </node>
+    </node>
+
+    <!-- Car Parts -->
+    <node title="Car Parts">
+      <node title="Engine">
+        <data type="text">The engine is the heart of a car, converting fuel into mechanical energy to power the vehicle.</data>
+      </node>
+      <node title="Transmission">
+        <data type="text">The transmission is responsible for transferring power from the engine to the wheels, allowing the car to change speeds.</data>
+      </node>
+      <node title="Brakes">
+        <data type="text">The braking system allows a vehicle to slow down or stop by using friction to reduce speed.</data>
+      </node>
+      <node title="Suspension">
+        <data type="text">The suspension system includes springs, shock absorbers, and linkages that allow the vehicle to absorb bumps and vibrations from the road.</data>
+      </node>
+      <node title="Wheels & Tires">
+        <data type="text">Wheels are the circular parts that allow the car to move, while tires are rubberized coverings that provide grip and traction.</data>
+      </node>
+    </node>
+
+    <!-- Car Parts -->
+    <node title="Car Parts">
+      <node title="Engine">
+        <data type="text">The engine is the heart of a car, converting fuel into mechanical energy to power the vehicle.</data>
+      </node>
+      <node title="Transmission">
+        <data type="text">The transmission is responsible for transferring power from the engine to the wheels, allowing the car to change speeds.</data>
+      </node>
+      <node title="Brakes">
+        <data type="text">The braking system allows a vehicle to slow down or stop by using friction to reduce speed.</data>
+      </node>
+      <node title="WheelsTires">
+        <data type="text">Wheels are the circular parts that allow the car to move, while tires are rubberized coverings that provide grip and traction.</data>
+      </node>
+      <node title="Suspension">
+        <data type="text">The suspension system includes springs, shock absorbers, and linkages that allow the vehicle to absorb bumps and vibrations from the road.</data>
+      </node>
+      </node>
+
+    <!-- Car History -->
+    <node title="Car History">
+      <node title="Invention of the Car">
+        <data type="text">The automobile was invented by Karl Benz in 1886 with the creation of the Benz Patent-Motorwagen, widely regarded as the first true automobile.</data>
+      </node>
+      <node title="Evolution of Cars">
+        <data type="text">The car evolved over decades, with advancements in engine technology, safety features, and design. Key milestones include Henry Ford's Model T, the introduction of automatic transmissions, and the rise of electric vehicles.</data>
+      </node>
+      <node title="The Rise of Electric Cars">
+        <data type="text">Electric cars have gained popularity in recent years, with manufacturers like Tesla leading the charge. These cars use electric motors and batteries, reducing reliance on fossil fuels.</data>
+      </node>
+    </node>
+
+    <!-- Car Technology -->
+    <node title="Car Technology">
+      <node title="Autonomous Cars">
+        <data type="text">Autonomous cars, or self-driving cars, use sensors, cameras, and AI to navigate without human intervention. Companies like Waymo and Tesla are leading in this field.</data>
+      </node>
+      <node title="Hybrid Cars">
+        <data type="text">Hybrid cars combine internal combustion engines with electric motors to improve fuel efficiency and reduce emissions.</data>
+      </node>
+      <node title="Electric Cars">
+        <data type="text">Electric vehicles (EVs) run entirely on electricity, offering a sustainable alternative to traditional gasoline-powered cars.</data>
+      </node>
+    </node>
+
+    <!-- Car Safety -->
+    <node title="Car Safety">
+      <node title="Airbags">
+        <data type="text">Airbags are safety devices designed to inflate rapidly in the event of a collision to protect passengers from injury.</data>
+      </node>
+      <node title="Anti-lock Braking System (ABS)">
+        <data type="text">ABS helps prevent the wheels from locking during braking, improving vehicle control during emergencies.</data>
+      </node>
+      <node title="Electronic Stability Control (ESC)">
+        <data type="text">ESC helps prevent skidding by automatically applying brakes to individual wheels when it detects loss of traction.</data>
+      </node>
+      <node title="Crash Test Ratings">
+        <data type="text">Car manufacturers conduct crash tests to assess the safety of vehicles. Ratings from organizations like NHTSA and IIHS help consumers make informed decisions.</data>
+      </node>
+    </node>
+
+    <!-- Popular Car Brands -->
+    <node title="Popular Car Brands">
+      <node title="Tesla">
+        <data type="text">Tesla is known for its electric vehicles, including the Model S, Model 3, Model X, and Model Y. The company has played a major role in pushing the adoption of electric cars.</data>
+      </node>
+      <node title="Honda">
+        <data type="text">Honda is a Japanese automaker known for producing reliable vehicles, including the Civic, Accord, and CR-V.</data>
+      </node>
+      <node title="Chevrolet">
+        <data type="text">Chevrolet is an American brand known for its trucks, SUVs, and popular cars like the Silverado and Malibu.</data>
+      </node>
+    </node>
+  </node>
+</lrml>

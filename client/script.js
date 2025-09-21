@@ -32,20 +32,37 @@ function LoadUpURL(url = "../demo/main.xml?node=hello") {
     fetchXML(url);
 }
 
-function fetchXML(url) {
-    fetch(url)
-        .then(response => response.text())
-        .then(xml => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xml, "application/xml");
-
-            currentXML = xmlDoc;
-
-            processNode(xmlDoc);
-        })
-        .catch(error => {
-            console.error("Error loading XML:", error);
-        });
+async function fetchXML(url) {
+    function escapeXml(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;'); }
+    function fallbackNode(title, msg) {
+        const parser = new DOMParser();
+        const xml = `<node title="${escapeXml(title)}"><data>${escapeXml(msg)}</data></node>`;
+        const doc = parser.parseFromString(xml, 'application/xml');
+        currentXML = doc;
+        processNode(doc);
+    }
+    if (typeof url !== 'string' || !url.trim()) { fallbackNode('❌ Bad URL', 'Invalid URL'); return; }
+    if (typeof navigator !== 'undefined' && navigator.onLine === false) { fallbackNode('❌ Offline', 'You appear to be offline'); return; }
+    try {
+        const resp = await fetch(url);
+        if (!resp.ok) { fallbackNode('❌ Not Found', `HTTP ${resp.status} ${resp.statusText || ''}`); return; }
+        const text = await resp.text();
+        if (!text || !text.trim()) { fallbackNode('❌ Empty', 'Response body empty'); return; }
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(text, 'application/xml');
+        if (xmlDoc.getElementsByTagName('parsererror').length) { fallbackNode('❌ Not XML', 'Response is not well-formed XML'); return; }
+        const elems = xmlDoc.getElementsByTagName('*');
+        for (let i = 0; i < elems.length; i++) {
+            const attrs = Array.from(elems[i].attributes || []);
+            for (const a of attrs) if (/^on/i.test(a.name) || a.name.toLowerCase().startsWith('xmlns:') && a.name.toLowerCase() !== 'xmlns') elems[i].removeAttribute(a.name);
+        }
+        currentXML = xmlDoc;
+        processNode(xmlDoc);
+    } catch (err) {
+        const msg = (err && err.message) ? err.message : 'Unknown error';
+        if (err instanceof TypeError) fallbackNode('❌ Network', 'The request failed: ' + msg);
+        else fallbackNode('❌ Error', msg);
+    }
 }
 
 function processNode(xmlDoc) {
@@ -55,9 +72,9 @@ function processNode(xmlDoc) {
     } else {
         currentNode = xmlDoc;
         for (let path of currentNodePath) {
-    currentNode = currentNode.querySelector(`node[title="${path}"], node[id="${path}"]`);
-    if (!currentNode) return;
-}
+            currentNode = currentNode.querySelector(`node[title="${path}"], node[id="${path}"]`);
+            if (!currentNode) return;
+        }
 
     }
     if (currentNode) renderNode(currentNode);
@@ -97,7 +114,7 @@ function renderNode(currentNode) {
     pathLogs.appendChild(pathElement);
     document.getElementById('path_logs').scrollTop = document.getElementById('path_logs').scrollHeight;
 
-const subnodes = currentNode.querySelectorAll(":scope > node");
+    const subnodes = currentNode.querySelectorAll(":scope > node");
 
     displaySubNodeLinks(subnodes);
 }
@@ -184,11 +201,11 @@ let hoverTimer;
 const pathLogs = document.querySelector('#path_logs');
 
 pathLogs.addEventListener('mouseleave', () => {
-  hoverTimer = setTimeout(() => {
-    pathLogs.scrollTo({ top: pathLogs.scrollHeight, behavior: 'smooth' });
-  }, 300);
+    hoverTimer = setTimeout(() => {
+        pathLogs.scrollTo({ top: pathLogs.scrollHeight, behavior: 'smooth' });
+    }, 300);
 });
 
 pathLogs.addEventListener('mouseenter', () => {
-  clearTimeout(hoverTimer);
+    clearTimeout(hoverTimer);
 });
